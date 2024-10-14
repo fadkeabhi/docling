@@ -2,70 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ds4sd.github.io/docling/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
+    </url>
+    <url>
+         <loc>https://ds4sd.github.io/docling/installation/</loc>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/batch_convert/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/custom_convert/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/export_figures/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/export_multimodal/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/export_tables/</loc>
-         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://ds4sd.github.io/docling/examples/ext_llamaindex/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/minimal/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/rag_langchain/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/examples/rag_llamaindex/</loc>
-         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://ds4sd.github.io/docling/installation/alternative_ocr_engines/</loc>
-         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://ds4sd.github.io/docling/installation/installation/</loc>
-         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://ds4sd.github.io/docling/integrations/langchain/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
     <url>
          <loc>https://ds4sd.github.io/docling/integrations/llamaindex/</loc>
-         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://ds4sd.github.io/docling/v2/</loc>
-         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://ds4sd.github.io/docling/v2/migration_from_v1/</loc>
-         <lastmod>2024-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://ds4sd.github.io/docling/v2/whats_new/</loc>
-         <lastmod>2024-10-12</lastmod>
+         <lastmod>2024-10-14</lastmod>
     </url>
 </urlset>

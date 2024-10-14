@@ -1,5 +1,3 @@
-:root {
-    --md-primary-fg-color:        #B85323;
-    --md-primary-fg-color--light: #ECB7B7;
-    --md-primary-fg-color--dark:  #90030C;
-  }
+[data-md-color-scheme="default"] .md-banner a {
+    color: #5e8bde;
+}
