@@ -22,7 +22,7 @@
     
     
       
-        <title>Use Docling - Docling</title>
+        <title>Usage - Docling</title>
       
     
     
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Use Docling
+              Usage
             
           </span>
         </div>
@@ -472,7 +472,7 @@
           
   
   <span class="md-ellipsis">
-    Use Docling
+    Usage
   </span>
   
 
@@ -483,7 +483,7 @@
         
   
   <span class="md-ellipsis">
-    Use Docling
+    Usage
   </span>
   
 
@@ -1256,7 +1256,7 @@
   
 
 
-  <h1>Use Docling</h1>
+  <h1>Usage</h1>
 
 <h2 id="convert-a-single-document">Convert a single document</h2>
 <p>To convert invidual PDF documents, use <code>convert()</code>, for example:</p>
@@ -1361,16 +1361,25 @@ This can improve output quality if you find that multiple columns in extracted t
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">docling.document_converter</span> <span class="kn">import</span> <span class="n">DocumentConverter</span>
 <span class="kn">from</span> <span class="nn">docling_core.transforms.chunker</span> <span class="kn">import</span> <span class="n">HierarchicalChunker</span>
 
-<span class="n">doc</span> <span class="o">=</span> <span class="n">DocumentConverter</span><span class="p">()</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;https://arxiv.org/pdf/2206.01062&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">legacy_document</span>
+<span class="n">conv_res</span> <span class="o">=</span> <span class="n">DocumentConverter</span><span class="p">()</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;https://arxiv.org/pdf/2206.01062&quot;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">conv_res</span><span class="o">.</span><span class="n">document</span>
 <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">HierarchicalChunker</span><span class="p">()</span><span class="o">.</span><span class="n">chunk</span><span class="p">(</span><span class="n">doc</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">chunks</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="c1"># ChunkWithMetadata(</span>
-<span class="c1">#     path=&#39;#/main-text/1&#39;,</span>
-<span class="c1">#     text=&#39;DocLayNet: A Large Human-Annotated Dataset [...]&#39;,</span>
-<span class="c1">#     page=1,</span>
-<span class="c1">#     bbox=[107.30, 672.38, 505.19, 709.08],</span>
-<span class="c1">#     [...]</span>
-<span class="c1"># )</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">chunks</span><span class="p">[</span><span class="mi">30</span><span class="p">])</span>
+<span class="c1"># {</span>
+<span class="c1">#   &quot;text&quot;: &quot;Lately, new types of ML models for document-layout analysis have emerged [...]&quot;,</span>
+<span class="c1">#   &quot;meta&quot;: {</span>
+<span class="c1">#     &quot;doc_items&quot;: [{</span>
+<span class="c1">#       &quot;self_ref&quot;: &quot;#/texts/40&quot;,</span>
+<span class="c1">#       &quot;label&quot;: &quot;text&quot;,</span>
+<span class="c1">#       &quot;prov&quot;: [{</span>
+<span class="c1">#         &quot;page_no&quot;: 2,</span>
+<span class="c1">#         &quot;bbox&quot;: {&quot;l&quot;: 317.06, &quot;t&quot;: 325.81, &quot;r&quot;: 559.18, &quot;b&quot;: 239.97, ...},</span>
+<span class="c1">#       }]</span>
+<span class="c1">#     }],</span>
+<span class="c1">#     &quot;headings&quot;: [&quot;2 RELATED WORK&quot;],</span>
+<span class="c1">#   }</span>
+<span class="c1"># }</span>
 </code></pre></div>
 
 
