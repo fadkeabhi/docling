@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://ds4sd.github.io/docling/integrations/llamaindex/">
+        <link rel="canonical" href="https://ds4sd.github.io/docling/concepts/docling_format/">
       
       
-        <link rel="prev" href="../../examples/rag_langchain/">
+        <link rel="prev" href="../../v2/">
       
+      
+        <link rel="next" href="../../examples/minimal/">
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>LlamaIndex 🦙 extension - Docling</title>
+        <title>The Docling Document format - Docling</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#get-started" class="md-skip">
+        <a href="#example-document-structures" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LlamaIndex 🦙 extension
+              The Docling Document format
             
           </span>
         </div>
@@ -259,11 +261,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../concepts/docling_format/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   Concepts
@@ -304,13 +308,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../integrations/llamaindex/" class="md-tabs__link">
           
   
   Integrations
@@ -500,25 +502,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -529,7 +536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -540,10 +547,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../concepts/docling_format/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    The Docling Document format
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -552,6 +579,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pictures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pictures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provenance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -921,30 +1013,25 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -955,7 +1042,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Integrations
@@ -966,28 +1053,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    LlamaIndex 🦙 extension
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../integrations/llamaindex/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,66 +1065,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get started
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docling-reader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docling Reader
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docling-node-parser" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docling Node Parser
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1085,6 +1094,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1093,44 +1104,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
+  <a href="#basic-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Get started
+      Basic structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
+  <a href="#grouping" class="md-nav__link">
     <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docling-reader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docling Reader
+      Grouping
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#docling-node-parser" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
     <span class="md-ellipsis">
-      Docling Node Parser
+      Tables
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#pictures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pictures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provenance
+    </span>
+  </a>
   
 </li>
       
@@ -1152,32 +1166,54 @@
   
 
 
-  <h1>LlamaIndex 🦙 extension</h1>
-
-<h2 id="get-started">Get started</h2>
-<p>Docling is available as an official LlamaIndex extension!</p>
-<p>To get started, check out the <a href="https://docs.llamaindex.ai/en/stable/examples/data_connectors/DoclingReaderDemo/">step-by-step guide in LlamaIndex [↗]</a><!--{target="_blank"}-->.</p>
-<div class="admonition info">
-<p class="admonition-title">Docling v2</p>
-<p>The LlamaIndex Docling extension update to Docling v2 is ongoing.</p>
-</div>
-<h2 id="components">Components</h2>
-<h3 id="docling-reader">Docling Reader</h3>
-<p>Reads document files and uses Docling to populate LlamaIndex <code>Document</code> objects — either serializing Docling's data model (losslessly, e.g. as JSON) or exporting to a simplified format (lossily, e.g. as Markdown).</p>
+<p>With Docling v2, we introduce a unified document representation format called <code>DoclingDocument</code>. It is defined as a 
+pydantic datatype, which can express several features common to documents, such as:</p>
 <ul>
-<li>💻 <a href="https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/readers/llama-index-readers-docling">GitHub [↗]</a><!--{target="_blank"}--></li>
-<li>📖 <a href="https://docs.llamaindex.ai/en/stable/api_reference/readers/docling/">API docs [↗]</a><!--{target="_blank"}--></li>
-<li>📦 <a href="https://pypi.org/project/llama-index-readers-docling/">PyPI [↗]</a><!--{target="_blank"}--></li>
-<li>🦙 <a href="https://llamahub.ai/l/readers/llama-index-readers-docling">LlamaHub [↗]</a><!--{target="_blank"}--></li>
+<li>Text, Tables, Pictures, and more</li>
+<li>Document hierarchy with sections and groups</li>
+<li>Disambiguation between main body and headers, footers (furniture)</li>
+<li>Layout information (i.e. bounding boxes) for all items, if available</li>
+<li>Provenance information</li>
 </ul>
-<h3 id="docling-node-parser">Docling Node Parser</h3>
-<p>Reads LlamaIndex <code>Document</code> objects populated in Docling's format by Docling Reader and, using its knowledge of the Docling format, parses them to LlamaIndex <code>Node</code> objects for downstream usage in LlamaIndex applications, e.g. as chunks for embedding.</p>
+<p>It also brings a set of document construction APIs to build up a <code>DoclingDocument</code> from scratch.</p>
+<h1 id="example-document-structures">Example document structures</h1>
+<p>To illustrate the features of the <code>DoclingDocument</code> format, consider the following side-by-side comparison of a
+<code>DoclingDocument</code> converted from <code>test/data/word_sample.docx</code>. Left side shows snippets from the converted document 
+serialized as YAML, right side shows the corresponding visual parts in MS Word.</p>
+<h2 id="basic-structure">Basic structure</h2>
+<p>A <code>DoclingDocument</code> exposes top-level fields for the document content, organized in two categories. 
+The first category is the <em>content items</em>, which are stored in these fields:</p>
 <ul>
-<li>💻 <a href="https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/node_parser/llama-index-node-parser-docling">GitHub [↗]</a><!--{target="_blank"}--></li>
-<li>📖 <a href="https://docs.llamaindex.ai/en/stable/api_reference/node_parser/docling/">API docs [↗]</a><!--{target="_blank"}--></li>
-<li>📦 <a href="https://pypi.org/project/llama-index-node-parser-docling/">PyPI [↗]</a><!--{target="_blank"}--></li>
-<li>🦙 <a href="https://llamahub.ai/l/node_parser/llama-index-node-parser-docling">LlamaHub [↗]</a><!--{target="_blank"}--></li>
+<li><code>texts</code>: All items that have a text representation (paragraph, section heading, equation, ...). Base class is <code>TextItem</code>.</li>
+<li><code>tables</code>: All tables, type <code>TableItem</code>. Can carry structure annotations.</li>
+<li><code>pictures</code>: All pictures, type <code>PictureItem</code>. Can carry structure annotations.</li>
+<li><code>key_value_items</code>: All key-value items.</li>
 </ul>
+<p>All of the above fields are lists and store items inheriting from the <code>DocItem</code> type. They can express different
+data structures depending on their type, and reference parents and children through JSON pointers.</p>
+<p>The second category is <em>content structure</em>, which is encapsualted in:</p>
+<ul>
+<li><code>body</code>: The root node of a tree-structure for the main document body</li>
+<li><code>furniture</code>: The root node of a tree-structure for all items that don't belong into the body (headers, footers, ...)</li>
+<li><code>groups</code>: A set of items that don't represent content, but act as containers for other content items (e.g. a list, a chapter)</li>
+</ul>
+<p>All of the above fields are only storing <code>NodeItem</code> instances, which reference children and parents 
+through JSON pointers. </p>
+<p>The reading order of the document is encapsulated through the <code>body</code> tree and the order of <em>children</em> in each item
+in the tree.</p>
+<p>Below example shows how all items in the first page are nested below the <code>title</code> item (<code>#/texts/1</code>). </p>
+<p><img alt="doc_hierarchy_1" src="../../assets/docling_doc_hierarchy_1.png" /></p>
+<h2 id="grouping">Grouping</h2>
+<p>Below example shows how all items under the heading "Let's swim" (<code>#/texts/5</code>) are nested as chilrden. The children of
+"Let's swim" are both text items and groups, which contain the list elements. The group items are stored in the 
+top-level <code>groups</code> field.</p>
+<p><img alt="doc_hierarchy_2" src="../../assets/docling_doc_hierarchy_2.png" /></p>
+<h2 id="tables">Tables</h2>
+<p>TBD</p>
+<h2 id="pictures">Pictures</h2>
+<p>TBD</p>
+<h2 id="provenance">Provenance</h2>
+<p>TBD</p>
 
 
 

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://ds4sd.github.io/docling/examples/export_multimodal/">
+        <link rel="canonical" href="https://ds4sd.github.io/docling/examples/run_with_formats/">
       
       
-        <link rel="prev" href="../export_tables/">
+        <link rel="prev" href="../batch_convert/">
       
       
-        <link rel="next" href="../rag_llamaindex/">
+        <link rel="next" href="../export_figures/">
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Multimodal export - Docling</title>
+        <title>Multi-format conversion - Docling</title>
       
     
     
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Multimodal export
+              Multi-format conversion
             
           </span>
         </div>
@@ -720,10 +720,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../run_with_formats/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -732,6 +739,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -804,17 +812,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../export_multimodal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -823,7 +824,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1039,7 +1039,7 @@
   
 
 
-  <h1>Multimodal export</h1>
+  <h1>Multi-format conversion</h1>
 
 <script>
 (function (global, factory) {
@@ -1477,7 +1477,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7a7bc2d4">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ced7a4f2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1495,14 +1495,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1">import datetime
+<div class="clipboard-copy-txt" id="cell-1">import json
 import logging
-import time
 from pathlib import Path</div>
 </div>
 </div>
@@ -1510,7 +1508,7 @@ from pathlib import Path</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=65d319b9">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=868a3bbe">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1528,16 +1526,16 @@ from pathlib import Path</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import pandas as pd</div>
+<div class="clipboard-copy-txt" id="cell-2">import yaml</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=03d9268d">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a8de2d03">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1555,24 +1553,32 @@ from pathlib import Path</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">docling.datamodel.base_models</span> <span class="kn">import</span> <span class="n">InputFormat</span>
-<span class="kn">from</span> <span class="nn">docling.datamodel.pipeline_options</span> <span class="kn">import</span> <span class="n">PdfPipelineOptions</span>
-<span class="kn">from</span> <span class="nn">docling.document_converter</span> <span class="kn">import</span> <span class="n">DocumentConverter</span><span class="p">,</span> <span class="n">PdfFormatOption</span>
-<span class="kn">from</span> <span class="nn">docling.utils.export</span> <span class="kn">import</span> <span class="n">generate_multimodal_pages</span>
-<span class="kn">from</span> <span class="nn">docling.utils.utils</span> <span class="kn">import</span> <span class="n">create_hash</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">docling.backend.pypdfium2_backend</span> <span class="kn">import</span> <span class="n">PyPdfiumDocumentBackend</span>
+<span class="kn">from</span> <span class="nn">docling.datamodel.base_models</span> <span class="kn">import</span> <span class="n">InputFormat</span>
+<span class="kn">from</span> <span class="nn">docling.document_converter</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DocumentConverter</span><span class="p">,</span>
+    <span class="n">PdfFormatOption</span><span class="p">,</span>
+    <span class="n">WordFormatOption</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">docling.pipeline.simple_pipeline</span> <span class="kn">import</span> <span class="n">SimplePipeline</span>
+<span class="kn">from</span> <span class="nn">docling.pipeline.standard_pdf_pipeline</span> <span class="kn">import</span> <span class="n">StandardPdfPipeline</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">from docling.datamodel.base_models import InputFormat
-from docling.datamodel.pipeline_options import PdfPipelineOptions
-from docling.document_converter import DocumentConverter, PdfFormatOption
-from docling.utils.export import generate_multimodal_pages
-from docling.utils.utils import create_hash</div>
+<div class="clipboard-copy-txt" id="cell-3">from docling.backend.pypdfium2_backend import PyPdfiumDocumentBackend
+from docling.datamodel.base_models import InputFormat
+from docling.document_converter import (
+    DocumentConverter,
+    PdfFormatOption,
+    WordFormatOption,
+)
+from docling.pipeline.simple_pipeline import SimplePipeline
+from docling.pipeline.standard_pdf_pipeline import StandardPdfPipeline</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e7ff62a2">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5dd2a5c8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1599,7 +1605,7 @@ from docling.utils.utils import create_hash</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a3811e38">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4529084a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1617,16 +1623,120 @@ from docling.utils.utils import create_hash</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">IMAGE_RESOLUTION_SCALE</span> <span class="o">=</span> <span class="mf">2.0</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">input_paths</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">"tests/data/wiki_duck.html"</span><span class="p">),</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">"tests/data/word_sample.docx"</span><span class="p">),</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">"tests/data/lorem_ipsum.docx"</span><span class="p">),</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">"tests/data/powerpoint_sample.pptx"</span><span class="p">),</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">"tests/data/2305.03393v1-pg9-img.png"</span><span class="p">),</span>
+        <span class="n">Path</span><span class="p">(</span><span class="s2">"tests/data/2206.01062.pdf"</span><span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="c1">## for defaults use:</span>
+    <span class="c1"># doc_converter = DocumentConverter()</span>
+
+    <span class="c1">## to customize use:</span>
+
+    <span class="n">doc_converter</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">DocumentConverter</span><span class="p">(</span>  <span class="c1"># all of the below is optional, has internal defaults.</span>
+            <span class="n">allowed_formats</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">InputFormat</span><span class="o">.</span><span class="n">PDF</span><span class="p">,</span>
+                <span class="n">InputFormat</span><span class="o">.</span><span class="n">IMAGE</span><span class="p">,</span>
+                <span class="n">InputFormat</span><span class="o">.</span><span class="n">DOCX</span><span class="p">,</span>
+                <span class="n">InputFormat</span><span class="o">.</span><span class="n">HTML</span><span class="p">,</span>
+                <span class="n">InputFormat</span><span class="o">.</span><span class="n">PPTX</span><span class="p">,</span>
+            <span class="p">],</span>  <span class="c1"># whitelist formats, non-matching files are ignored.</span>
+            <span class="n">format_options</span><span class="o">=</span><span class="p">{</span>
+                <span class="n">InputFormat</span><span class="o">.</span><span class="n">PDF</span><span class="p">:</span> <span class="n">PdfFormatOption</span><span class="p">(</span>
+                    <span class="n">pipeline_cls</span><span class="o">=</span><span class="n">StandardPdfPipeline</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="n">PyPdfiumDocumentBackend</span>
+                <span class="p">),</span>
+                <span class="n">InputFormat</span><span class="o">.</span><span class="n">DOCX</span><span class="p">:</span> <span class="n">WordFormatOption</span><span class="p">(</span>
+                    <span class="n">pipeline_cls</span><span class="o">=</span><span class="n">SimplePipeline</span>  <span class="c1"># , backend=MsWordDocumentBackend</span>
+                <span class="p">),</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">conv_results</span> <span class="o">=</span> <span class="n">doc_converter</span><span class="o">.</span><span class="n">convert_all</span><span class="p">(</span><span class="n">input_paths</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">conv_results</span><span class="p">:</span>
+        <span class="n">out_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"scratch"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Document </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> converted."</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Saved markdown output to: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">out_path</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+        <span class="c1"># print(res.docdocument.export_to_markdown())</span>
+        <span class="c1"># Export Docling document format to markdowndoc:</span>
+        <span class="k">with</span> <span class="p">(</span><span class="n">out_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.md"</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">export_to_markdown</span><span class="p">())</span>
+
+        <span class="k">with</span> <span class="p">(</span><span class="n">out_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.json"</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">export_to_dict</span><span class="p">()))</span>
+
+        <span class="k">with</span> <span class="p">(</span><span class="n">out_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.yaml"</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">export_to_dict</span><span class="p">()))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">IMAGE_RESOLUTION_SCALE = 2.0</div>
+<div class="clipboard-copy-txt" id="cell-5">def main():
+    input_paths = [
+        Path("tests/data/wiki_duck.html"),
+        Path("tests/data/word_sample.docx"),
+        Path("tests/data/lorem_ipsum.docx"),
+        Path("tests/data/powerpoint_sample.pptx"),
+        Path("tests/data/2305.03393v1-pg9-img.png"),
+        Path("tests/data/2206.01062.pdf"),
+    ]
+
+    ## for defaults use:
+    # doc_converter = DocumentConverter()
+
+    ## to customize use:
+
+    doc_converter = (
+        DocumentConverter(  # all of the below is optional, has internal defaults.
+            allowed_formats=[
+                InputFormat.PDF,
+                InputFormat.IMAGE,
+                InputFormat.DOCX,
+                InputFormat.HTML,
+                InputFormat.PPTX,
+            ],  # whitelist formats, non-matching files are ignored.
+            format_options={
+                InputFormat.PDF: PdfFormatOption(
+                    pipeline_cls=StandardPdfPipeline, backend=PyPdfiumDocumentBackend
+                ),
+                InputFormat.DOCX: WordFormatOption(
+                    pipeline_cls=SimplePipeline  # , backend=MsWordDocumentBackend
+                ),
+            },
+        )
+    )
+
+    conv_results = doc_converter.convert_all(input_paths)
+
+    for res in conv_results:
+        out_path = Path("scratch")
+        print(
+            f"Document {res.input.file.name} converted."
+            f"\nSaved markdown output to: {str(out_path)}"
+        )
+        # print(res.docdocument.export_to_markdown())
+        # Export Docling document format to markdowndoc:
+        with (out_path / f"{res.input.file.name}.md").open("w") as fp:
+            fp.write(res.document.export_to_markdown())
+
+        with (out_path / f"{res.input.file.name}.json").open("w") as fp:
+            fp.write(json.dumps(res.document.export_to_dict()))
+
+        with (out_path / f"{res.input.file.name}.yaml").open("w") as fp:
+            fp.write(yaml.safe_dump(res.document.export_to_dict()))</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=02b8fd21">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3744c5c0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1644,209 +1754,10 @@ from docling.utils.utils import create_hash</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-
-    <span class="n">input_doc_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"./tests/data/2206.01062.pdf"</span><span class="p">)</span>
-    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"scratch"</span><span class="p">)</span>
-
-    <span class="c1"># Important: For operating with page images, we must keep them, otherwise the DocumentConverter</span>
-    <span class="c1"># will destroy them for cleaning up memory.</span>
-    <span class="c1"># This is done by setting AssembleOptions.images_scale, which also defines the scale of images.</span>
-    <span class="c1"># scale=1 correspond of a standard 72 DPI image</span>
-    <span class="n">pipeline_options</span> <span class="o">=</span> <span class="n">PdfPipelineOptions</span><span class="p">()</span>
-    <span class="n">pipeline_options</span><span class="o">.</span><span class="n">images_scale</span> <span class="o">=</span> <span class="n">IMAGE_RESOLUTION_SCALE</span>
-    <span class="n">pipeline_options</span><span class="o">.</span><span class="n">generate_page_images</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="n">doc_converter</span> <span class="o">=</span> <span class="n">DocumentConverter</span><span class="p">(</span>
-        <span class="n">format_options</span><span class="o">=</span><span class="p">{</span>
-            <span class="n">InputFormat</span><span class="o">.</span><span class="n">PDF</span><span class="p">:</span> <span class="n">PdfFormatOption</span><span class="p">(</span><span class="n">pipeline_options</span><span class="o">=</span><span class="n">pipeline_options</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">)</span>
-
-    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-    <span class="n">conv_res</span> <span class="o">=</span> <span class="n">doc_converter</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">input_doc_path</span><span class="p">)</span>
-
-    <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="p">(</span>
-        <span class="n">content_text</span><span class="p">,</span>
-        <span class="n">content_md</span><span class="p">,</span>
-        <span class="n">content_dt</span><span class="p">,</span>
-        <span class="n">page_cells</span><span class="p">,</span>
-        <span class="n">page_segments</span><span class="p">,</span>
-        <span class="n">page</span><span class="p">,</span>
-    <span class="p">)</span> <span class="ow">in</span> <span class="n">generate_multimodal_pages</span><span class="p">(</span><span class="n">conv_res</span><span class="p">):</span>
-
-        <span class="n">dpi</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">_default_image_scale</span> <span class="o">*</span> <span class="mi">72</span>
-
-        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="p">{</span>
-                <span class="s2">"document"</span><span class="p">:</span> <span class="n">conv_res</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="s2">"hash"</span><span class="p">:</span> <span class="n">conv_res</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">document_hash</span><span class="p">,</span>
-                <span class="s2">"page_hash"</span><span class="p">:</span> <span class="n">create_hash</span><span class="p">(</span>
-                    <span class="n">conv_res</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">document_hash</span> <span class="o">+</span> <span class="s2">":"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">page_no</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-                <span class="p">),</span>
-                <span class="s2">"image"</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">"width"</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
-                    <span class="s2">"height"</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
-                    <span class="s2">"bytes"</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">tobytes</span><span class="p">(),</span>
-                <span class="p">},</span>
-                <span class="s2">"cells"</span><span class="p">:</span> <span class="n">page_cells</span><span class="p">,</span>
-                <span class="s2">"contents"</span><span class="p">:</span> <span class="n">content_text</span><span class="p">,</span>
-                <span class="s2">"contents_md"</span><span class="p">:</span> <span class="n">content_md</span><span class="p">,</span>
-                <span class="s2">"contents_dt"</span><span class="p">:</span> <span class="n">content_dt</span><span class="p">,</span>
-                <span class="s2">"segments"</span><span class="p">:</span> <span class="n">page_segments</span><span class="p">,</span>
-                <span class="s2">"extra"</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">"page_num"</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">page_no</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-                    <span class="s2">"width_in_points"</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
-                    <span class="s2">"height_in_points"</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
-                    <span class="s2">"dpi"</span><span class="p">:</span> <span class="n">dpi</span><span class="p">,</span>
-                <span class="p">},</span>
-            <span class="p">}</span>
-        <span class="p">)</span>
-
-    <span class="c1"># Generate one parquet from all documents</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
-    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-    <span class="n">output_filename</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"multimodal_</span><span class="si">{</span><span class="n">now</span><span class="si">:</span><span class="s2">%Y-%m-%d_%H%M%S</span><span class="si">}</span><span class="s2">.parquet"</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">output_filename</span><span class="p">)</span>
-
-    <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
-
-    <span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">"Document converted and multimodal pages generated in </span><span class="si">{</span><span class="n">end_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds."</span>
-    <span class="p">)</span>
-
-    <span class="c1"># This block demonstrates how the file can be opened with the HF datasets library</span>
-    <span class="c1"># from datasets import Dataset</span>
-    <span class="c1"># from PIL import Image</span>
-    <span class="c1"># multimodal_df = pd.read_parquet(output_filename)</span>
-
-    <span class="c1"># # Convert pandas DataFrame to Hugging Face Dataset and load bytes into image</span>
-    <span class="c1"># dataset = Dataset.from_pandas(multimodal_df)</span>
-    <span class="c1"># def transforms(examples):</span>
-    <span class="c1">#     examples["image"] = Image.frombytes('RGB', (examples["image.width"], examples["image.height"]), examples["image.bytes"], 'raw')</span>
-    <span class="c1">#     return examples</span>
-    <span class="c1"># dataset = dataset.map(transforms)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-6">def main():
-    logging.basicConfig(level=logging.INFO)
-
-    input_doc_path = Path("./tests/data/2206.01062.pdf")
-    output_dir = Path("scratch")
-
-    # Important: For operating with page images, we must keep them, otherwise the DocumentConverter
-    # will destroy them for cleaning up memory.
-    # This is done by setting AssembleOptions.images_scale, which also defines the scale of images.
-    # scale=1 correspond of a standard 72 DPI image
-    pipeline_options = PdfPipelineOptions()
-    pipeline_options.images_scale = IMAGE_RESOLUTION_SCALE
-    pipeline_options.generate_page_images = True
-
-    doc_converter = DocumentConverter(
-        format_options={
-            InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
-        }
-    )
-
-    start_time = time.time()
-
-    conv_res = doc_converter.convert(input_doc_path)
-
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    rows = []
-    for (
-        content_text,
-        content_md,
-        content_dt,
-        page_cells,
-        page_segments,
-        page,
-    ) in generate_multimodal_pages(conv_res):
-
-        dpi = page._default_image_scale * 72
-
-        rows.append(
-            {
-                "document": conv_res.input.file.name,
-                "hash": conv_res.input.document_hash,
-                "page_hash": create_hash(
-                    conv_res.input.document_hash + ":" + str(page.page_no - 1)
-                ),
-                "image": {
-                    "width": page.image.width,
-                    "height": page.image.height,
-                    "bytes": page.image.tobytes(),
-                },
-                "cells": page_cells,
-                "contents": content_text,
-                "contents_md": content_md,
-                "contents_dt": content_dt,
-                "segments": page_segments,
-                "extra": {
-                    "page_num": page.page_no + 1,
-                    "width_in_points": page.size.width,
-                    "height_in_points": page.size.height,
-                    "dpi": dpi,
-                },
-            }
-        )
-
-    # Generate one parquet from all documents
-    df = pd.json_normalize(rows)
-    now = datetime.datetime.now()
-    output_filename = output_dir / f"multimodal_{now:%Y-%m-%d_%H%M%S}.parquet"
-    df.to_parquet(output_filename)
-
-    end_time = time.time() - start_time
-
-    _log.info(
-        f"Document converted and multimodal pages generated in {end_time:.2f} seconds."
-    )
-
-    # This block demonstrates how the file can be opened with the HF datasets library
-    # from datasets import Dataset
-    # from PIL import Image
-    # multimodal_df = pd.read_parquet(output_filename)
-
-    # # Convert pandas DataFrame to Hugging Face Dataset and load bytes into image
-    # dataset = Dataset.from_pandas(multimodal_df)
-    # def transforms(examples):
-    #     examples["image"] = Image.frombytes('RGB', (examples["image.width"], examples["image.height"]), examples["image.bytes"], 'raw')
-    #     return examples
-    # dataset = dataset.map(transforms)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1dd8c983">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">if __name__ == "__main__":
+<div class="clipboard-copy-txt" id="cell-6">if __name__ == "__main__":
     main()</div>
 </div>
 </div>
